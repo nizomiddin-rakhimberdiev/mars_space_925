@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="space.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mt-3">
+            <img src="https://via.placeholder.com/100x30" alt="Mars Logo">
+            <div>
+                <button class="btn btn-danger">+ Post yaratish</button>
+                <img src="https://via.placeholder.com/40" alt="User Icon" class="rounded-circle">
+            </div>
+        </div>
+
+        <!-- Payment Notice -->
+        <div class="alert alert-warning mt-3 text-center" role="alert">
+            <strong>Noyabr oyi uchun to'lov yaqinlashmoqda.</strong> To'lov qilishni unutmang!
+        </div>
+
+        <div class="row mt-4">
+            <!-- Profile Section -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="7.png" alt="User Avatar" class="rounded-circle">
+                        <h5 class="mt-2">Levels</h5>
+                        <span class="badge bg-warning text-dark">⭐ ⭐</span>
+                        <h5 class="mt-2">Nurmuhammad Muradbekov</h5>
+                        <p>Xakerlar | BACK-925 | Nizomiddin Rahimberdiyev | 16:20</p>
+                        <div class="d-flex justify-content-around">
+                            <div>
+                                <span class="badge bg-warning text-dark p-2">65</span><br>Coins
+                            </div>
+                            <div>
+                                <span class="badge bg-danger text-light p-2">4877</span><br>XP
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Section -->
+            <div class="col-md-8">
+                <h4 class="text-center">🎉 Yangiliklar</h4>
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://via.placeholder.com/600x200" class="d-block w-100" alt="Ad 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/600x200" class="d-block w-100" alt="Ad 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/600x200" class="d-block w-100" alt="Ad 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+                <!-- Assistant Notification -->
+                <div class="d-flex align-items-center mt-3 p-3 bg-light border rounded">
+                    <img src="https://via.placeholder.com/30" alt="Icon" class="me-2">
+                    <div>
+                        <p class="mb-0">Yordamchi o’qituvchi</p>
+                        <small>Qo’shimcha darsga olish uchun ro’yxatdan o’ting</small>
+                    </div>
+                    <button class="btn btn-primary ms-auto">Yozilish</button>
+                </div>
+
+                <!-- Latest News Notification -->
+                <div class="d-flex align-items-center mt-2 p-3 bg-light border rounded">
+                    <img src="https://via.placeholder.com/30" alt="Icon" class="me-2">
+                    <div>
+                        <p class="mb-0">Yangiliklar</p>
+                        <small>O’quv markazimiz haqida so’nggi yangiliklardan habardor bo’ling</small>
+                    </div>
+                    <button class="btn btn-danger ms-auto">Watch 📹</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
