@@ -5,10 +5,15 @@
     <title>Title</title>
 </head>
 <body>
+<form action="">
+    <input type="text" name="search">
+    <button type="submit">Search</button>
+</form>
 {% for s in students %}
     <ul>
         <li>{{s.username}} | {{ s.first_name }} {{ s.last_name }} | {{ s.group.name }}</li>
     </ul>
 {% endfor %}
+
 </body>
 </html>

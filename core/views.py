@@ -30,7 +30,13 @@ def add_teacher_view(request):
     if request.method == 'POST':
         form = AddTeacherForm(request.POST)
         if form.is_valid():
-            form.save()
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            username = form.cleaned_data['username']
+            password = f"{random.randint(10000, 99999)}{first_name}"
+            with open('teachers.txt', 'a') as f:
+                f.write(f"FirstName: {first_name}, Last Name: {last_name}, Username: {username}, Password: {password}\n")
+            Teacher.objects.create(first_name=first_name, last_name=last_name,username=username, password=password)
             return redirect('admin-dashboard')
     else:
         form = AddTeacherForm()
@@ -59,7 +65,11 @@ def add_student_view(request):
     return render(request, 'add_teacher.html', {'form': form})
 
 def students_view(request):
-    students = Student.objects.all()
+    search_query = request.GET.get('search', '')
+    if search_query:
+        students = Student.objects.filter(first_name__icontains=search_query)
+    else:
+        students = Student.objects.all()
     context = {'students': students}
     return render(request, 'students.html', context)
 

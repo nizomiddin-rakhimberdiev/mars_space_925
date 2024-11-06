@@ -5,7 +5,7 @@ from users.models import Teacher, Student
 class AddTeacherForm(forms.ModelForm):
     class Meta:
         model = Teacher
-        fields = ['first_name', 'last_name', 'username', 'password']
+        fields = ['first_name', 'last_name', 'username']
 
 
 class AddStudentForm(forms.ModelForm):
