@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <input type="text" name="search">
+    <button type="submit">Search</button>
+</form>
+
+{% for g in groups %}
+    <ul>
+        <li>{{g.name}} | {{ g.teacher.first_name }} {{ g.teacher.last_name }} | {{ g.course.name }}</li>
+    </ul>
+{% endfor %}
+</body>
+</html>

@@ -2,8 +2,8 @@ import random
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from .forms import AddTeacherForm, AddStudentForm
-from users.models import Teacher, Student
+from .forms import AddTeacherForm, AddStudentForm, AddGroupForm, EditStudentForm
+from users.models import Teacher, Student, Group
 
 
 # Create your views here.
@@ -78,3 +78,32 @@ def teachers_view(request):
     teachers = Teacher.objects.all()
     context = {'teachers': teachers}
     return render(request, 'teachers.html', context)
+
+
+def add_group_view(request):
+    if request.method == 'POST':
+        form = AddGroupForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('admin-dashboard')
+    elif request.method == 'GET':
+        form = AddGroupForm()
+    return render(request, 'add_teacher.html', {'form': form})
+
+
+def groups_view(request):
+    groups = Group.objects.all()
+    context = {'groups': groups}
+    return render(request, 'groups.html', context)
+
+
+def edit_student_view(request, id):
+    student = Student.objects.get(id=id)
+    if request.method == 'POST':
+        form = EditStudentForm(request.POST, request.FILES, instance=student)
+        if form.is_valid():
+            form.save()
+            return redirect('students')
+    else:
+        form = EditStudentForm(instance=student)
+    return render(request, 'add_teacher.html', {'form': form})

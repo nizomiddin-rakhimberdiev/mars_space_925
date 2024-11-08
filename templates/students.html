@@ -9,11 +9,31 @@
     <input type="text" name="search">
     <button type="submit">Search</button>
 </form>
-{% for s in students %}
-    <ul>
-        <li>{{s.username}} | {{ s.first_name }} {{ s.last_name }} | {{ s.group.name }}</li>
-    </ul>
-{% endfor %}
 
+
+<table border="1" width="900">
+    <thead>
+    <tr>
+        <th>SpaceID</th>
+        <th>Group</th>
+        <th>Full name</th>
+        <th>Teacher</th>
+        <th>Phone</th>
+        <th>Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for s in students %}
+    <tr>
+            <td>{{ s.username }}</td>
+            <td>{{ s.group.name }}</td>
+            <td>{{ s.first_name }} {{ s.last_name }}</td>
+            <td>{{ s.group.teacher.first_name }} {{ s.group.teacher.last_name }}</td>
+            <td>{{ s.phone }}</td>
+            <td><a href="{% url 'edit-student' s.id %}">Edit</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
 </body>
 </html>
